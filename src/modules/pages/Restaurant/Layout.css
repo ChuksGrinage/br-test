@@ -1,0 +1,38 @@
+.display {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.display-enter {
+  height: 50px;
+  opacity: 0;
+}
+.display-enter.display-enter-active {
+  height: 100%;
+  opacity: 1;
+  transition: all 700ms;
+}
+.display-leave {
+  opacity: .3;
+  height: 50px;
+}
+.display-leave.display-leave-active {
+  height: 0;
+  opacity: 0;
+  transition: all 700ms;
+}
+
+.cardGridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "card card"
+                        "details details";
+}
+/* 
+.card {
+  grid-area: card;
+}
+
+.details {
+  grid-area: details
+} */
