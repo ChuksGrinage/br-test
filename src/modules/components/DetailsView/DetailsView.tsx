@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { GoogleMap } from "../../components";
-import { Restaurant } from "../../types";
+import { GoogleMap } from "modules/components";
+import { Restaurant } from "modules/types";
 
 interface Props {
   restaurant: Restaurant;
@@ -16,7 +16,7 @@ export default class DetailsView extends Component<Props, State> {
       <div
         className={className && className}
         style={{
-          height: "100vh",
+          height: "80vh",
           display: "flex",
           flexDirection: "column"
         }}

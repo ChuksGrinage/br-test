@@ -8,8 +8,7 @@ interface Props {
   name: string
 }
 
-const KEY = "AIzaSyBP_lLb-Z5_i4Q0TfhhFvljNMi8ewdwLpU";
-console.log(KEY)
+const KEY = `${process.env.REACT_APP_GOOGLE_MAP_API_KEY}`;
 
 const GoogleMap: React.FC<Props> = ({ lat, lng, name }) => {
 

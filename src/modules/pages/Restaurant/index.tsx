@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import { MainLayout } from '../../layouts';
+import { MainLayout } from 'modules/layouts';
 import RestaurantPageLayout from './Layout';
-import { Restaurant } from '../../types';
+import { Restaurant } from 'modules/types';
 
 interface RestaurantPageProps {}
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import mapImage from "../../Images/icon_map@2x.png";
-import arrow from "../../Images/ic_webBack@2x.png";
+import mapImage from "modules/Images/icon_map@2x.png";
+import arrow from "modules/Images/ic_webBack@2x.png";
 
 interface Props {}
 interface State {}

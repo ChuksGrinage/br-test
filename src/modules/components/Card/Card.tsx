@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import gradient from "../../Images/cellGradientBackground@2x.png";
+import gradient from "modules/Images/cellGradientBackground@2x.png";
 
 interface Props {
   title: string;

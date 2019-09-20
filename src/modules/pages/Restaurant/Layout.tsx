@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
-import { Card, DetailsView } from "../../components";
+import { Card, DetailsView } from "modules/components";
 
 import { Restaurant } from "../../types";
 
@@ -36,28 +36,31 @@ export default class RestaurantPageLayout extends Component<Props, State> {
     const { selectedRestaurant } = this.state;
 
     return (
-      <div>
-        {restaurants.map(restaurant => (
-          <div key={restaurant.name}>
-            <div
-              className="cardGridContainer"
-              onClick={() => this.handleCardClick(restaurant.name)}
-            >
-              <Card
-                title={restaurant.name}
-                subText={restaurant.category}
-                image={restaurant.backgroundImageURL}
-              />
+      <div className="cardGridContainer">
+        <div className="gridItem">
+          {restaurants.map(restaurant => (
+            <div key={restaurant.name}>
+              <div onClick={() => this.handleCardClick(restaurant.name)}>
+                <Card
+                  title={restaurant.name}
+                  subText={restaurant.category}
+                  image={restaurant.backgroundImageURL}
+                />
+              </div>
+              <ReactCSSTransitionGroup
+                transitionName="display"
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={300}
+              >
+                {selectedRestaurant === restaurant.name && (
+                  <div className="detailsCtnr">
+                    <DetailsView restaurant={restaurant} className="details" />
+                  </div>
+                )}
+              </ReactCSSTransitionGroup>
             </div>
-            <ReactCSSTransitionGroup transitionName="display">
-              {selectedRestaurant === restaurant.name && (
-                <div className="details">
-                  <DetailsView restaurant={restaurant} />
-                </div>
-              )}
-            </ReactCSSTransitionGroup>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }
