@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import { Card, DetailsView } from "modules/components";
 
 import { Restaurant } from "../../types";
@@ -37,8 +36,10 @@ export default class RestaurantPageLayout extends Component<Props, State> {
 
     return (
       <div className="cardGridContainer">
-        <div className="gridItem">
-          {restaurants.map(restaurant => (
+        {restaurants.map(restaurant => {
+          const detailStatus = selectedRestaurant === restaurant.name ? "--active" : "--inactive";
+          console.log(detailStatus)
+          return (
             <div key={restaurant.name}>
               <div onClick={() => this.handleCardClick(restaurant.name)}>
                 <Card
@@ -47,20 +48,14 @@ export default class RestaurantPageLayout extends Component<Props, State> {
                   image={restaurant.backgroundImageURL}
                 />
               </div>
-              <ReactCSSTransitionGroup
-                transitionName="display"
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={300}
-              >
-                {selectedRestaurant === restaurant.name && (
-                  <div className="detailsCtnr">
-                    <DetailsView restaurant={restaurant} className="details" />
-                  </div>
-                )}
-              </ReactCSSTransitionGroup>
+              {selectedRestaurant === restaurant.name && (
+                <div className={`detailsCtnr${detailStatus}`}>
+                  <DetailsView restaurant={restaurant} className="details" />
+                </div>
+              )}
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     );
   }

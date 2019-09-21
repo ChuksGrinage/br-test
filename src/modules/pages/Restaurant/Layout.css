@@ -1,57 +1,35 @@
-.display {
-  /* position: absolute;
-  top: 0;
-  left: 0; */
-  height: 100%;
-}
-.display-enter {
-  height: 50px;
-  opacity: 0;
-}
-.display-enter.display-enter-active {
-  height: 50%;
-  opacity: 1;
-  transition: all 700ms ease-in;
-}
-.display-leave {
-  opacity: .3;
-  height: 50px;
-}
-.display-leave.display-leave-active {
-  height: 0;
-  opacity: 0;
-  transition: all 700ms ease-in;
-}
 
 .cardGridContainer {
   display: grid;
   /* position: relative; */
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   position: relative;
 }
 
-.gridItem {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
+/* .detailsCtnr {
+  height: 0;
+  transition: all 5s
+} */
 
-.card {
-  overflow: hidden;
-}
-
-.detailsCtnr {
+.detailsCtnr--active {
   height: 80vh;
+}
+
+.detailsCtnr--inactive {
+  height: 0;
+  transition: all 5s
 }
 
 .details {
   position: absolute;
   width: 100vw;
+  height: 80vh;
   left: 0;
   right: 0;
 }
 
 @media only screen and (max-width: 700px) {
-  .gridItem {
+  .cardGridContainer {
     grid-template-columns: repeat(1, 1fr);
   }
 }

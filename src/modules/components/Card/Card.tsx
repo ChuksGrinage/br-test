@@ -20,7 +20,8 @@ export default class Card extends Component<Props, State> {
             backgroundSize: "cover",
             display: "flex",
             justifyContent: "flex-end",
-            flexDirection: "column"
+            flexDirection: "column",
+            overflow: "hidden"
           }}
         >
           <div style={{ height: "50%", padding: "50% 20px 20px", backgroundImage: `url(${gradient})`, backgroundPosition: "center", backgroundSize: "cover" }}>
