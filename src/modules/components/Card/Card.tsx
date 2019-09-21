@@ -14,21 +14,31 @@ export default class Card extends Component<Props, State> {
   render() {
     const { title, subText, image } = this.props;
     return (
+      <div
+        className="card"
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundSize: "cover",
+          display: "flex",
+          justifyContent: "flex-end",
+          flexDirection: "column",
+          overflow: "hidden",
+          borderRadius: "20px"
+        }}
+      >
         <div
           style={{
-            backgroundImage: `url(${image})`,
-            backgroundSize: "cover",
-            display: "flex",
-            justifyContent: "flex-end",
-            flexDirection: "column",
-            overflow: "hidden"
+            height: "50%",
+            padding: "50% 20px 20px",
+            backgroundImage: `url(${gradient})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover"
           }}
         >
-          <div style={{ height: "50%", padding: "50% 20px 20px", backgroundImage: `url(${gradient})`, backgroundPosition: "center", backgroundSize: "cover" }}>
-            <h3 style={{ margin: "0" }}>{title}</h3>
-            <h4 style={{ fontWeight: "lighter", margin: "0" }}>{subText}</h4>
-          </div>
+          <h3 style={{ margin: "0" }}>{title}</h3>
+          <h4 style={{ fontWeight: "lighter", margin: "0" }}>{subText}</h4>
         </div>
+      </div>
     );
   }
 }

@@ -18,15 +18,21 @@ export default class DetailsView extends Component<Props, State> {
         style={{
           height: "80vh",
           display: "flex",
-          flexDirection: "column"
+          flexDirection: "column",
+          backgroundColor: "white",
+          borderRadius: "5px 20px",
+          overflow: "hidden",
+          boxShadow: "inset 0 0 10px #000000"
         }}
       >
         <div style={{ flex: "3" }}>
           <GoogleMap name={name} lat={location.lat} lng={location.lng} />
         </div>
-        <div style={{ backgroundColor: "#34B379", flex: ".5", padding: "15px" }}>
-          <h3 style={{margin: "0"}}>{name}</h3>
-          <h5 style={{margin: "0", fontWeight: "lighter"}}>{category}</h5>
+        <div
+          style={{ backgroundColor: "#34B379", flex: ".5", padding: "15px" }}
+        >
+          <h3 style={{ margin: "0" }}>{name}</h3>
+          <h5 style={{ margin: "0", fontWeight: "lighter" }}>{category}</h5>
         </div>
         <div style={{ flex: "3", color: "black", padding: "15px" }}>
           <p>
@@ -38,7 +44,9 @@ export default class DetailsView extends Component<Props, State> {
               <p>{contact.formattedPhone}</p>
               <p>@{contact.twitter}</p>
             </React.Fragment>
-          ) : <p>No contacts provided</p>}
+          ) : (
+            <p>No contacts provided</p>
+          )}
         </div>
       </div>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Card, DetailsView } from "modules/components";
+// import { usSpring, animated } from 'react-spring';
 
 import { Restaurant } from "../../types";
 
@@ -48,11 +49,11 @@ export default class RestaurantPageLayout extends Component<Props, State> {
                   image={restaurant.backgroundImageURL}
                 />
               </div>
-              {selectedRestaurant === restaurant.name && (
+              {/* {selectedRestaurant === restaurant.name && ( */}
                 <div className={`detailsCtnr${detailStatus}`}>
-                  <DetailsView restaurant={restaurant} className="details" />
+                  { selectedRestaurant === restaurant.name && <DetailsView restaurant={restaurant} className="details" />}
                 </div>
-              )}
+              {/* )} */}
             </div>
           );
         })}
